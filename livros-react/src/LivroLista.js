@@ -7,7 +7,7 @@ import { ControleEditora } from './controle/ControleEditora';
 const controleLivros = new ControleLivros();
 const controleEditora = new ControleEditora();
 
-// Componente auxiliar LinhaLivro
+// auxiliar LinhaLivro
 function LinhaLivro(props) {
   const { livro, excluir } = props;
   const nomeEditora = controleEditora.getNomeEditora(livro.codEditora);
@@ -22,12 +22,12 @@ function LinhaLivro(props) {
   );
 }
 
-// Componente LivroLista
+// LivroLista
 export default function LivroLista() {
   const [livros, setLivros] = useState([]);
   const [carregado, setCarregado] = useState(false);
 
-  // Método para excluir livro
+  // excluir livro
   const excluir = (codigo) => {
     controleLivros.excluir(codigo);
     setCarregado(false);
