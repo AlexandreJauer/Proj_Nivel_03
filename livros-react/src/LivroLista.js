@@ -14,10 +14,10 @@ function LinhaLivro(props) {
 
   return (
     <tr>
-      <td><button onClick={() => excluir(livro.codigo)}>Excluir</button></td>
-      <td>{livro.titulo}</td>
-      <td>{livro.autores.join(", ")}</td>
+      <td>{livro.titulo}<br></br><button class="btn btn-danger" onClick={() => excluir(livro.codigo)}>Excluir</button></td>
       <td>{nomeEditora}</td>
+      <td> {livro.autores.join(" , ")}</td>
+      
     </tr>
   );
 }
@@ -43,14 +43,14 @@ export default function LivroLista() {
 
   return (
     <main>
-      <h1>Lista de Livros</h1>
-      <table>
+      <h1>Catálogo de Livros</h1>
+      <table class="table">
         <thead>
-          <tr>
-            <th></th>
-            <th>Título</th>
-            <th>Autor(es)</th>
-            <th>Editora</th>
+          <tr class="thead-dark">
+            <th scope="col">Título</th>
+            <th scope="col">Editora</th> 
+            <th scope="col">Autor(es)</th>
+            
           </tr>
         </thead>
         <tbody>
